@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Docker
+.docker/
+
+# Backups (generated at runtime)
+backups/*.sql
+
+# Local test/debug scripts
+scripts/local_test.py
+scripts/validate_sql.py
+scripts/debug_sql.py
+
+# Env files
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Downloads / setup scripts
+*.log

@@ -1,0 +1,58 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: library_db
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: librarian
+      POSTGRES_PASSWORD: secret123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - library_net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U librarian -d library"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: library_api
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: library
+      DB_USER: librarian
+      DB_PASSWORD: secret123
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - library_net
+    restart: unless-stopped
+
+  adminer:
+    image: adminer:4
+    container_name: library_adminer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - library_net
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  library_net:
+    driver: bridge
