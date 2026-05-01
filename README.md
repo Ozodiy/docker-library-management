@@ -1,9 +1,5 @@
 # Library Management System
 
-**Course:** Virtualization of Computer Systems  
-**Student:** Ozodbek Tursunaliyev (ID: 57264)  
-**Institution:** Akademia WSB – Cloud Computing Architecture  
-
 ---
 
 ## Screenshots
