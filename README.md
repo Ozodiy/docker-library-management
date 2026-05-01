@@ -6,6 +6,49 @@
 
 ---
 
+## Screenshots
+
+### Containers Running
+![docker compose ps](screenshots/01_docker_compose_ps.png)
+
+### Docker Images (Custom Build)
+![docker images](screenshots/02_docker_images.png)
+
+### GET /books — All Books with Availability
+![GET /books](screenshots/03_api_books.png)
+
+### POST Operations — Create Book, User, Loan
+![POST operations](screenshots/04_api_post_operations.png)
+
+### Loan Tracking & Overdue Detection
+![Loans and overdue](screenshots/05_api_loans_overdue.png)
+
+### Return Book Flow
+![Return book](screenshots/06_api_return_book.png)
+
+### Automated Test Suite — 17/17 Passed
+![Test results](screenshots/10_test_results.png)
+
+### Adminer — Visual Database Management (http://localhost:8080)
+![Adminer](screenshots/12_adminer_browser.png)
+
+### API JSON Response in Browser (http://localhost:5000/books)
+![API browser](screenshots/13_api_browser.png)
+
+### Backup & Restore Scripts
+![Backup](screenshots/11_backup_restore.png)
+
+### Project Structure
+![Structure](screenshots/07_project_structure.png)
+
+### docker compose up --build Output
+![Build](screenshots/09_docker_build.png)
+
+### Dockerfile
+![Dockerfile](screenshots/08_dockerfile.png)
+
+---
+
 ## Project Description
 
 A containerized REST API for managing an academic library: books, registered users, and
